@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -27,4 +28,5 @@ public class Course {
     @Column(name = "university")
     private String university;
     private CourseTypeEnum courseTypeEnum;
+
 }

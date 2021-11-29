@@ -26,7 +26,12 @@ public class Student {
     private String lastName;
     @Column(name = "birthDate")
     private LocalDate birthDate;
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     private GenderEnum gender;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
 
 }
