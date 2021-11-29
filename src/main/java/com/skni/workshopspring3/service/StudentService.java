@@ -7,9 +7,13 @@ import com.skni.workshopspring3.repository.model.GenderEnum;
 import com.skni.workshopspring3.repository.model.Student;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import net.bytebuddy.description.type.TypeDescription;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.spec.OAEPParameterSpec;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -19,12 +23,21 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
 
-    public Student addStudent(String anna, String kowalska, LocalDate of, GenderEnum female, Course course) {
-        return new Student();
+    public Student addStudent(String firstName, String lastName, LocalDate birthDate,
+                              GenderEnum gender, Course course) {
+        Student student = Student.builder()
+                .firstName(firstName)
+                .lastName(lastName)
+                .birthDate(birthDate)
+                .gender(gender)
+                .course(course)
+                .build();
+        return studentRepository.save(student);
+
     }
 
-    public boolean findAllByLastName(String nowak) {
-        return true;
+    public List<Student> findAllByLastName(String lastName) {
+        List<String> students = studentRepository.findAllByFirstName(lastName);
     }
 
     public boolean getStudentByGenderAndByCourseType(GenderEnum male, CourseTypeEnum inzynier) {

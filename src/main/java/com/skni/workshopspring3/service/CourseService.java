@@ -15,7 +15,12 @@ public class CourseService {
     private final CourseRepository courseRepository;
 
 
-    public Course addCourse(String informatyka, int i, String sgh, CourseTypeEnum inzynier) {
-        return new Course();
+    public Course addCourse(String name, int term, String university, CourseTypeEnum courseTypeEnum) {
+        Course course = Course.builder()
+                .name(name)
+                .term(term)
+                .university(university)
+                .courseTypeEnum(courseTypeEnum).build();
+        return courseRepository.save(course);
     }
 }
