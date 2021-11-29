@@ -26,6 +26,8 @@ public class Course {
     private int term;
     @Column(name = "university")
     private String university;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
     private CourseTypeEnum type;
 
 }

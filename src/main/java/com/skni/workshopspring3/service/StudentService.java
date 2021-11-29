@@ -55,4 +55,8 @@ public class StudentService {
         }
         return false;
     }
+
+    public List<Student> findAllByGenderAndAgeAndUniversity(GenderEnum genderEnum, int wiek, String university) {
+        return studentRepository.findAllByGenderAndAgeAndUniversity(genderEnum,  university);
+    }
 }
