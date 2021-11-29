@@ -5,15 +5,26 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import javax.persistence.*;
+
+@Entity
+@Table(name = "course")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Data
 public class Course {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "term")
     private int term;
+    @Column(name = "university")
     private String university;
     private CourseTypeEnum courseTypeEnum;
 }

@@ -5,17 +5,28 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-@Data
+@Entity
+@Table(name = "student")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Data
 public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "firstName")
     private String firstName;
+    @Column(name = "lastName")
     private String lastName;
+    @Column(name = "birthDate")
     private LocalDate birthDate;
+    @Column(name = "gender")
     private GenderEnum gender;
 
 }
