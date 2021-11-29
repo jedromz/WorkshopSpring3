@@ -52,7 +52,7 @@ public class WorkshopSpring3Application {
 
             System.out.println(studentService.getAllStudents());
             System.out.println("MOJE");
-            System.out.println(studentService.findAllByGenderAndAgeAndUniversity(GenderEnum.MALE,10,"SGH"));
+            System.out.println(studentService.findAllByGenderAndAgeAndUniversity(GenderEnum.FEMALE.name(), 10,"SGH"));
             System.out.println(studentService.deleteStudentById(studentFemale.getId()));
             System.out.println(studentService.getAllStudents());
 
