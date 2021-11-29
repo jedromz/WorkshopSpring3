@@ -7,10 +7,8 @@ import com.skni.workshopspring3.repository.model.GenderEnum;
 import com.skni.workshopspring3.repository.model.Student;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.description.type.TypeDescription;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.spec.OAEPParameterSpec;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +35,7 @@ public class StudentService {
     }
 
     public List<Student> findAllByLastName(String lastName) {
-        return studentRepository.findAllByFirstName(lastName);
+        return studentRepository.findAllByLastName(lastName);
     }
 
     public Optional<Student> getStudentByGenderAndByCourseType(GenderEnum gender, CourseTypeEnum type) {
@@ -49,4 +47,12 @@ public class StudentService {
     }
 
 
+    public boolean deleteStudentById(Long id) {
+        Optional<Student> student = studentRepository.findById(id);
+        if (student.isPresent()) {
+            studentRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
