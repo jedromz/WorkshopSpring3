@@ -40,16 +40,13 @@ public class StudentService {
         return studentRepository.findAllByFirstName(lastName);
     }
 
-    public Student getStudentByGenderAndByCourseType(GenderEnum gender, CourseTypeEnum type) {
-        Optional<Student> student = studentRepository.findStudentByGenderAndCourse_Type(gender, type);
-        return student.orElseThrow();
+    public Optional<Student> getStudentByGenderAndByCourseType(GenderEnum gender, CourseTypeEnum type) {
+        return studentRepository.findStudentByGenderAndCourse_Type(gender, type);
     }
 
-    public boolean getAllStudents() {
-        return true;
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 
-    public boolean deleteStudentById(Long id) {
-        return true;
-    }
+
 }
