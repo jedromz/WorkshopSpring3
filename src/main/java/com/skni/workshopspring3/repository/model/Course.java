@@ -16,7 +16,6 @@ import javax.persistence.*;
 @Data
 public class Course {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
