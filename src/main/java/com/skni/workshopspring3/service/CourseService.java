@@ -20,7 +20,7 @@ public class CourseService {
                 .name(name)
                 .term(term)
                 .university(university)
-                .courseTypeEnum(courseTypeEnum).build();
+                .type(courseTypeEnum).build();
         return courseRepository.save(course);
     }
 }

@@ -26,6 +26,6 @@ public class Course {
     private int term;
     @Column(name = "university")
     private String university;
-    private CourseTypeEnum courseTypeEnum;
+    private CourseTypeEnum type;
 
 }

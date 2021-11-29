@@ -37,12 +37,12 @@ public class StudentService {
     }
 
     public List<Student> findAllByLastName(String lastName) {
-        List<String> students = studentRepository.findAllByFirstName(lastName);
+        return studentRepository.findAllByFirstName(lastName);
     }
 
-    public boolean getStudentByGenderAndByCourseType(GenderEnum male, CourseTypeEnum inzynier) {
-
-        return true;
+    public Student getStudentByGenderAndByCourseType(GenderEnum gender, CourseTypeEnum type) {
+        Optional<Student> student = studentRepository.findStudentByGenderAndCourse_Type(gender, type);
+        return student.orElseThrow();
     }
 
     public boolean getAllStudents() {
