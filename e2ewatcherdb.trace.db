@@ -1,0 +1,6 @@
+2021-11-25 23:48:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ADDRESS" not found; SQL statement:
+INSERT INTO address (id,street, city, country) VALUES (3, 'Koszykowa 86', 'Warszawa', 'Polska'), (4, 'R. Gen. Garcia Rosado 25 3º', 'Lizbona', 'Portugalia') [42102-200]
+2021-11-25 23:53:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ADDRESS" not found; SQL statement:
+INSERT INTO address (id,street, city, country) VALUES (3, 'Koszykowa 86', 'Warszawa', 'Polska'), (4, 'R. Gen. Garcia Rosado 25 3º', 'Lizbona', 'Portugalia') [42102-200]
