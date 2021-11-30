@@ -36,8 +36,5 @@ public class Student {
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    public int wiek() {
-        return Period.between(birthDate, LocalDate.now()).getYears();
-    }
 
 }

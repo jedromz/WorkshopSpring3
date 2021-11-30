@@ -43,7 +43,7 @@ public class WorkshopSpring3Application {
 
             System.out.println(studentMale);
             System.out.println(studentFemale);
-            System.out.println(studentFemale.wiek());
+
 
             System.out.println(studentService.findAllByLastName("Nowak"));
 
@@ -52,7 +52,7 @@ public class WorkshopSpring3Application {
 
             System.out.println(studentService.getAllStudents());
             System.out.println("MOJE");
-            System.out.println(studentService.findAllByGenderAndAgeAndUniversity(GenderEnum.FEMALE.name(), 10,"SGH"));
+            System.out.println(studentService.findFirstByGenderAndAgeAndCourse_University(studentMale,100));
             System.out.println(studentService.deleteStudentById(studentFemale.getId()));
             System.out.println(studentService.getAllStudents());
 

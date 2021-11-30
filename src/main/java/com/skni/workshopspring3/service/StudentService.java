@@ -20,6 +20,9 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
+    public List<Student> findFirstByGenderAndAgeAndCourse_University(Student student, int age) {
+        return studentRepository.findFirstByGenderAndAgeAndCourse_University(student,age);
+    }
 
     public Student addStudent(String firstName, String lastName, LocalDate birthDate,
                               GenderEnum gender, Course course) {
@@ -56,7 +59,4 @@ public class StudentService {
         return false;
     }
 
-    public List<Student> findAllByGenderAndAgeAndUniversity(String genderEnum, int wiek, String university) {
-        return studentRepository.findAllByGenderAndAgeAndUniversity(genderEnum,  university);
-    }
 }

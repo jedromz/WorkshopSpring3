@@ -3,8 +3,10 @@ package com.skni.workshopspring3.repository;
 import com.skni.workshopspring3.repository.model.CourseTypeEnum;
 import com.skni.workshopspring3.repository.model.GenderEnum;
 import com.skni.workshopspring3.repository.model.Student;
+import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +19,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Optional<Student> findStudentByGenderAndCourse_Type(GenderEnum gender, CourseTypeEnum course_type);
 
 
-    @Query(
-            value = "SELECT distinct s.* FROM student s JOIN course c ON s.course_id = c.id WHERE s.gender = ?1 " +
-                    "AND c.university = ?2",
-            nativeQuery = true)
-    List<Student> findAllByGenderAndAgeAndUniversity(String genderEnum,  String university);
+    @Query("select distinct s from Student s where s.gender = :#{#student.gender} and  s.course.university = :#{#student.course.university} and s.birthDate < dateadd(year, -:age, curdate())" )
+    List<Student> findFirstByGenderAndAgeAndCourse_University(@Param("student") Student student, @Param("age")int age);
 }

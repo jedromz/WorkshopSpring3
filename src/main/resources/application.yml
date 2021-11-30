@@ -18,4 +18,4 @@ spring:
         hbm2ddl:
           auto: create
     defer-datasource-initialization: true
-    show-sql: true
+    show-sql: false
