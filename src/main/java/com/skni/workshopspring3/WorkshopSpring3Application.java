@@ -45,14 +45,14 @@ public class WorkshopSpring3Application {
             System.out.println(studentFemale);
 
 
-            System.out.println(studentService.findAllByLastName("Nowak"));
+            System.out.println(studentService.getAllByLastName("Nowak"));
 
             System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.MALE, CourseTypeEnum.INZYNIER));
             System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.FEMALE, CourseTypeEnum.LICENCJAT));
 
             System.out.println(studentService.getAllStudents());
             System.out.println("MOJE");
-            System.out.println(studentService.findFirstByGenderAndAgeAndCourse_University(studentMale,100));
+            System.out.println(studentService.getAllByGenderAndAgeAndCourse_University(studentMale,100));
             System.out.println(studentService.deleteStudentById(studentFemale.getId()));
             System.out.println(studentService.getAllStudents());
 

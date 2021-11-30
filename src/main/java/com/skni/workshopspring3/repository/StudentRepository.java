@@ -20,5 +20,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
 
     @Query("select distinct s from Student s where s.gender = :#{#student.gender} and  s.course.university = :#{#student.course.university} and s.birthDate < dateadd(year, -:age, curdate())" )
-    List<Student> findFirstByGenderAndAgeAndCourse_University(@Param("student") Student student, @Param("age")int age);
+    List<Student> findAllByGenderAndAgeAndCourse_University(@Param("student") Student student, @Param("age")int age);
 }
