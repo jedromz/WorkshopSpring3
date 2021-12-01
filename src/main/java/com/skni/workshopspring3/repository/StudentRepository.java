@@ -17,6 +17,10 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findAllByLastName(String lastName);
 
+    @Override
+    List<Student> findAll();
+
+
     Optional<Student> findStudentByGenderAndCourse_Type(GenderEnum gender, CourseTypeEnum course_type);
 
 
