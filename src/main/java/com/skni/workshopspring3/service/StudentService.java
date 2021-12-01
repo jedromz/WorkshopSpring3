@@ -20,8 +20,16 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public List<Student> getAllByGenderAndAgeAndCourse_University(Student student, int age) {
-        return studentRepository.findAllByGenderAndAgeAndCourse_University(student,age);
+    public List<Student> getAllByGenderAndAgeAndCourse_University(GenderEnum gender, String university, int youngerThan) {
+        Course course = Course.builder()
+                .university(university)
+                .build();
+        Student student = Student.builder()
+                .gender(gender)
+                .course(course)
+                .build();
+
+        return studentRepository.findAllByGenderAndAgeAndCourse_University(student, youngerThan);
     }
 
     public Student addStudent(String firstName, String lastName, LocalDate birthDate,

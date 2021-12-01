@@ -19,6 +19,8 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Optional<Student> findStudentByGenderAndCourse_Type(GenderEnum gender, CourseTypeEnum course_type);
 
 
-    @Query("select distinct s from Student s where s.gender = :#{#student.gender} and  s.course.university = :#{#student.course.university} and s.birthDate < dateadd(year, -:age, curdate())" )
-    List<Student> findAllByGenderAndAgeAndCourse_University(@Param("student") Student student, @Param("age")int age);
+    //find students younger than youngerThan , by gender and university
+    @Query("select distinct s from Student s where s.gender = :#{#student.gender} and  s.course.university = :#{#student.course.university} " +
+            "and s.birthDate < dateadd(year, -:youngerThan, curdate())")
+    List<Student> findAllByGenderAndAgeAndCourse_University(@Param("student") Student student, @Param("youngerThan") int youngerThan);
 }

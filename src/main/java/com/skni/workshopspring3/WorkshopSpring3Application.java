@@ -51,8 +51,8 @@ public class WorkshopSpring3Application {
             System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.FEMALE, CourseTypeEnum.LICENCJAT));
 
             System.out.println(studentService.getAllStudents());
-            System.out.println("MOJE");
-            System.out.println(studentService.getAllByGenderAndAgeAndCourse_University(studentMale,100));
+            //custom query
+            System.out.println(studentService.getAllByGenderAndAgeAndCourse_University(GenderEnum.FEMALE, "SGH", 10));
             System.out.println(studentService.deleteStudentById(studentFemale.getId()));
             System.out.println(studentService.getAllStudents());
 
