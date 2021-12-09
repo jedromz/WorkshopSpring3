@@ -1,15 +1,12 @@
 package com.skni.workshopspring3.repository.model;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.Period;
 
 @Entity
 @Table(name = "student")

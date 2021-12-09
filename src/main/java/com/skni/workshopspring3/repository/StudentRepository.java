@@ -3,7 +3,6 @@ package com.skni.workshopspring3.repository;
 import com.skni.workshopspring3.repository.model.CourseTypeEnum;
 import com.skni.workshopspring3.repository.model.GenderEnum;
 import com.skni.workshopspring3.repository.model.Student;
-import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,3 +1,4 @@
+
 spring:
   sql:
     init:
@@ -19,3 +20,7 @@ spring:
           auto: create
     defer-datasource-initialization: true
     show-sql: false
+
+server:
+  servlet:
+    context-path: "/api/v1"

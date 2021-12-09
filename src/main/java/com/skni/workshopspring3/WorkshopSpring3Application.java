@@ -8,6 +8,7 @@ import com.skni.workshopspring3.repository.model.GenderEnum;
 import com.skni.workshopspring3.repository.model.Student;
 import com.skni.workshopspring3.service.CourseService;
 import com.skni.workshopspring3.service.StudentService;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -58,5 +59,10 @@ public class WorkshopSpring3Application {
 
 
         };
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
